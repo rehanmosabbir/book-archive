@@ -1,13 +1,21 @@
 const loadBookData = () => {
   const searchText = document.getElementById("input-field").value;
+  document.getElementById("book-container").innerHTML = ``;
+  document.getElementById("num-books").innerHTML = ``;
   const url = `http://openlibrary.org/search.json?q=${searchText}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayBookData(data));
+  document.getElementById("input-field").value = "";
 };
 document.getElementById("search-btn").addEventListener("click", loadBookData);
 const displayBookData = (data) => {
   const books = data.docs;
+  const numBooksContainer = document.getElementById("num-books");
+  const h3 = document.createElement("h3");
+  h3.classList.add("text-danger", "fw-bold");
+  h3.innerText = `Found : ${data.numFound} books`;
+  numBooksContainer.appendChild(h3);
   books.forEach((book) => {
     console.log(book);
     const bookContainer = document.getElementById("book-container");
