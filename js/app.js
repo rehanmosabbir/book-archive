@@ -11,7 +11,8 @@ const loadBookData = () => {
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayBookData(data));
+    .then((data) => displayBookData(data))
+    .catch((err) => console.log(err));
   document.getElementById("input-field").value = "";
 };
 document.getElementById("search-btn").addEventListener("click", loadBookData);
