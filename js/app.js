@@ -32,7 +32,7 @@ const displayBookData = (data) => {
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="img-thumbnail" style="width: 18rem;" alt="${
       book.title
     }">
-            <div class="card-header">${book.title}</div>
+            <div class="card-header">Book's Name : ${book.title}</div>
             <div class="card-body">
                 <h5 class="card-title">Author name : ${book?.author_name?.length > 0 ? book.author_name[0] : "N/A"}</h5>
                 <p class="card-text">First Publish year : ${book?.first_publish_year}</p>
