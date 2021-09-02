@@ -2,7 +2,7 @@ const loadBookData = () => {
   const searchText = document.getElementById("input-field").value;
   document.getElementById("book-container").innerHTML = ``;
   document.getElementById("num-books").innerHTML = ``;
-  const url = `http://openlibrary.org/search.json?q=${searchText}`;
+  const url = `https://openlibrary.org/search.json?q=${searchText}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayBookData(data));
