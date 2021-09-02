@@ -12,10 +12,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container my-5">
-      <h1 class="my-4">Book Archive</h1>
+    <section class="container my-5">
+      <h1 class="my-4 fw-bold">Book <span class="text-danger">Archive</span></h1>
       <div class="input-group mb-3">
         <input
           id="input-field"
@@ -25,13 +27,21 @@
           aria-label="Recipient's username"
           aria-describedby="search-btn"
         />
-        <button class="btn btn-warning text-white" type="button" id="search-btn">Search</button>
+        <button class="btn btn-danger text-white" type="button" id="search-btn">Search</button>
+      </div>
+
+      <!-- Spinner -->
+
+      <div class="d-flex justify-content-center pt-5">
+        <div id="spinner" class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
 
       <div id="num-books"></div>
 
       <div id="book-container" class="row"></div>
-    </div>
+    </section>
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
