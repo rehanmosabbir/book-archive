@@ -28,13 +28,13 @@ const displayBookData = (data) => {
     const div = document.createElement("div");
     div.classList.add("col-md-3");
     div.innerHTML = `
-        <div class="text-dark mb-3" style="max-width: 18rem; border: 3px solid #222; border-radius: 5px">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="img-thumbnail" style="width: 18rem;" alt="${
-      book.title
-    }">
+        <div class="card text-dark mb-5" style="max-width: 18rem; border: 1px solid #ddd; border-radius: 5px">
+            <img src=${
+              book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : `images/cover_i_n-M.jpg`
+            } class="img-thumbnail" style="width: 18rem; height: 18rem" alt="${book.title}">
             <div class="card-header">Book's Name : ${book.title}</div>
             <div class="card-body">
-                <h5 class="card-title">Author name : ${book?.author_name?.length > 0 ? book.author_name[0] : "N/A"}</h5>
+                <h5 class="card-title">Author's name : ${book?.author_name?.length > 0 ? book.author_name[0] : "N/A"}</h5>
                 <p class="card-text">First Publish year : ${book?.first_publish_year}</p>
                 <p class="card-text">Publisher : ${book?.publisher?.length > 0 ? book.publisher[0] : "N/A"}</p>
             </div>
@@ -42,5 +42,6 @@ const displayBookData = (data) => {
     `;
     bookContainer.appendChild(div);
   });
+  // hide spinner
   toggleSpinner("none");
 };
